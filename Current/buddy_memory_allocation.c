@@ -47,6 +47,15 @@ void allocate(int id, int length, struct Node* head)
 
 void show(struct Node* head)
 {
+    struct Node* ptr = head;
+    int count = 0;
+    while (ptr)
+    {
+        count++;
+        ptr = ptr->next;
+    }
+    printf("%d\n", count);
+    ptr = head;
     while (head)
     {
         printf("%d ", head->id);
