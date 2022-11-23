@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 struct Node{
     int size;
-    int id = 0;
-    struct Node* next = NULL;
+    int id;
+    struct Node* next;
 };
 
 void allocate(int id, int length, struct Node* head)
