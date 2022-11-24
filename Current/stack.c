@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 struct stack{
-    char data[1000];
+    char data[100000];
     int pointer;
 };
 

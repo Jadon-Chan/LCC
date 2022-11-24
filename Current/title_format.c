@@ -5,8 +5,8 @@
 void lower(char *str)
 {
     for (int i = 0; i < strlen(str); i++)
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] = tolower(str[i]);
+        if (*(str+i) >= 'A' && *(str+i) <= 'Z')
+            *(str+i) = tolower(*(str+i));
 }
 int main(void)
 {
@@ -17,10 +17,10 @@ int main(void)
     for (int i = 0; i < strlen(str); i++)
     {
         if (flag)
-            putchar(toupper(str[i]));
+            putchar(toupper(*(str+i)));
         else
-            putchar(str[i]);
-        if (str[i] == ' ')
+            putchar(*(str+i));
+        if (*(str+i) == ' ')
             flag = 1;
         else 
             flag = 0;
