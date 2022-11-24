@@ -2,28 +2,33 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
-void lower(char *str)
+void lower(char *ptr)
 {
-    for (int i = 0; i < strlen(str); i++)
-        if (*(str+i) >= 'A' && *(str+i) <= 'Z')
-            *(str+i) = tolower(*(str+i));
+    while (*ptr)
+    {
+        if (isupper(*ptr))
+            *ptr = tolower(*ptr);
+        ptr++;
+    }
 }
 int main(void)
 {
     char *str = (char*)malloc(5000);
     gets(str);
-    lower(str);
+    char *ptr = str;
+    lower(ptr);
     int flag = 1;
-    for (int i = 0; i < strlen(str); i++)
+    while (*ptr)
     {
         if (flag)
-            putchar(toupper(*(str+i)));
+            putchar(toupper(*ptr));
         else
-            putchar(*(str+i));
-        if (*(str+i) == ' ')
+            putchar(*ptr);
+        if (*ptr == ' ')
             flag = 1;
         else 
             flag = 0;
+        ptr++;
     }
     return 0;
 }
